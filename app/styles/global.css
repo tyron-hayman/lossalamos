@@ -1,0 +1,179 @@
+@charset "UTF-8";
+@keyframes rotation {
+  0% {
+    transform: rotateZ(0deg);
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+  }
+}
+body {
+  background: rgb(244, 244, 244);
+  font-size: 18px;
+}
+
+p {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: #101010;
+}
+p.subtext {
+  color: rgb(93, 98, 97);
+  font-size: 0.8rem;
+  text-align: left !important;
+}
+
+a {
+  color: rgb(247, 49, 5);
+  text-decoration: none;
+}
+
+.loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader.fullscreen {
+  position: fixed !important;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 1000;
+  background: rgb(244, 244, 244);
+}
+.loader .spinner {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 20px 0;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: rgb(247, 49, 5) 2px solid;
+  border-left-color: rgb(79, 13, 234);
+  border-right-color: rgb(79, 13, 234);
+  animation: rotation 0.35s ease-in-out forwards infinite;
+  -webkit-animation: rotation 0.35s ease-in-out forwards infinite;
+  -moz-animation: rotation 0.35s ease-in-out forwards infinite;
+  -o-animation: rotation 0.35s ease-in-out forwards infinite;
+}
+
+.buttonMain {
+  position: relative;
+  background: rgb(244, 244, 244);
+  padding: 10px 30px;
+  border-radius: 9999px;
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  -o-border-radius: 9999px;
+  color: rgb(247, 49, 5);
+  border: rgb(247, 49, 5) 1px solid;
+  margin: 0 0 20px 0;
+  overflow: hidden;
+  transition: all 0.25s ease-out;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  cursor: pointer;
+}
+.buttonMain span {
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+.buttonMain:before {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: rgb(247, 49, 5);
+  z-index: 1;
+  content: " ";
+  display: block;
+  transition: all 0.25s ease-out;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+}
+.buttonMain:hover {
+  color: rgb(244, 244, 244);
+}
+.buttonMain:hover:before {
+  width: 100%;
+  opacity: 1;
+}
+
+.mainHomeContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainHomeContainer .homeSlogan h1 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  line-height: 1;
+  color: #101010;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.mainHomeContainer .homeSlogan h1 span {
+  color: rgb(247, 49, 5);
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-style: normal;
+}
+.mainHomeContainer .homeSlogan p {
+  margin: 0;
+  padding: 0 10px;
+  text-align: center;
+}
+.mainHomeContainer #loginform {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+}
+.mainHomeContainer #loginform.hide {
+  opacity: 0;
+}
+.mainHomeContainer #loginform input {
+  display: block;
+  font-size: 1.1rem;
+  color: #101010;
+  width: 100%;
+  padding: 15px 30px;
+  border-radius: 9999px;
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  -o-border-radius: 9999px;
+  border: rgba(0, 0, 0, 0.1) 1px solid;
+  margin: 0 0 20px 0;
+}
+.mainHomeContainer #loginform input:focus {
+  border: rgba(0, 0, 0, 0.1) 1px solid;
+}/*# sourceMappingURL=global.css.map */

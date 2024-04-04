@@ -1,0 +1,78 @@
+// Branding
+$white      : rgb(244,244,244);
+$red        : rgb(247,49,5);
+$black      : #101010;
+$grey       : rgb(93,98,97);
+$lightGrey  : rgba(0,0,0,0.1);
+$orange     : rgb(234,69,13);
+$purple       : rgb(79, 13, 234);
+
+// Mixins
+
+@mixin DMsans($weight) {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+}
+
+@mixin gradient($deg, $start, $end) {
+    background: $start;  /* fallback for old browsers */
+    background: -webkit-linear-gradient($deg, $start, $end);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient($deg, $start, $end); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+@mixin borderRadius($rad) {
+    border-radius: $rad;
+    -webkit-border-radius: $rad;
+    -moz-border-radius: $rad;
+    -o-border-radius: $rad;
+}
+
+@mixin transition($args) {
+    transition: $args;
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -o-transition: $args;
+}
+
+@mixin animation($args) {
+    animation: $args;
+    -webkit-animation: $args;
+    -moz-animation: $args;
+    -o-animation: $args;
+}
+
+@mixin pos_cords($left, $top, $bottom, $right) {
+    left: $left;
+    top: $top;
+    bottom: $bottom;
+    right: $right;
+}
+
+// Animations
+
+@keyframes rotation {
+    0% {
+        transform: rotateZ(0deg);
+        -webkit-transform: rotateZ(0deg);
+        -moz-transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+    }
+}
+
+@-webkit-keyframes rotation {
+    0% {
+        transform: rotateZ(0deg);
+        -webkit-transform: rotateZ(0deg);
+        -moz-transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+    }
+}

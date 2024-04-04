@@ -1,0 +1,141 @@
+@import "variables";
+
+// Global
+
+body {
+    background: $white;
+    font-size: 18px;
+}
+
+p {
+    @include DMsans(400);
+    font-size: 1.2rem;
+    color: $black;
+    &.subtext {
+        color: $grey;
+        font-size: 0.8rem;
+        text-align: left!important;
+    }
+}
+
+a {
+    color: $red;
+    text-decoration: none;
+}
+
+.loader {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.fullscreen {
+        position: fixed!important;
+        @include pos_cords(0px, 0px, 0px, 0px);
+        z-index: 1000;
+        background: $white;
+    }
+    .spinner {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 20px 0;
+        @include borderRadius(50%);
+        border: $red 2px solid;
+        border-left-color:  $purple;
+        border-right-color: $purple;
+        @include animation(rotation 0.35s ease-in-out forwards infinite);
+    }
+}
+
+.buttonMain {
+    position: relative;
+    background: $white;
+    padding: 10px 30px;
+    @include borderRadius(9999px);
+    color: $red;
+    border: $red 1px solid;
+    margin: 0 0 20px 0;
+    overflow: hidden;
+    @include transition(all 0.25s ease-out);
+    cursor: pointer;
+    span {
+        position: relative;
+        z-index: 2;
+        display: block;
+    }
+    &:before {
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 0%;
+        background: $red;
+        z-index: 1;
+        content: "\00a0";
+        display: block;
+        @include transition(all 0.25s ease-out);
+    }
+    &:hover {
+        color: $white;
+        &:before {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+// Homepage
+
+.mainHomeContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .homeSlogan {
+        h1 {
+            @include DMsans(400);
+            font-size: 3rem;
+            line-height: 1;
+            color: $black;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            span {
+                color: $red;
+                @include DMsans(1000);
+            }
+        }
+        p {
+            margin: 0;
+            padding: 0 10px;
+            text-align: center;
+        }
+    }
+    #loginform {
+        width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px 0;
+        opacity: 1;
+        @include transition(all 0.25s ease-out);
+        &.hide {
+            opacity: 0;
+        }
+        input {
+            display: block;
+            font-size: 1.1rem;
+            color: $black;
+            width: 100%;
+            padding: 15px 30px;
+            @include borderRadius(9999px);
+            border: $lightGrey 1px solid;
+            margin: 0 0 20px 0;
+            &:focus {
+                border: $lightGrey 1px solid;
+            }
+        }
+    }
+}
